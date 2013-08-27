@@ -1,0 +1,1687 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_las",
+				"_lastLaggedMessageTime"
+			],
+			[
+				"sim",
+				"_simulatedLagMin"
+			],
+			[
+				"_simulated",
+				"_simulatedLagMin"
+			],
+			[
+				"_recei",
+				"_receiveStateCallbacks"
+			],
+			[
+				"_contr",
+				"_controller"
+			],
+			[
+				"onInput",
+				"onInputEventFired"
+			],
+			[
+				"_control",
+				"_controlCallbacks"
+			],
+			[
+				"onConn",
+				"onConnect"
+			],
+			[
+				"_conn",
+				"_connectCallbacks"
+			],
+			[
+				"_flush",
+				"_flushInterval"
+			],
+			[
+				"_receive",
+				"_receiveCallbacks"
+			],
+			[
+				"messa",
+				"messageType"
+			],
+			[
+				"_unsent",
+				"_unsentBroadcasts"
+			],
+			[
+				"_unse",
+				"_unsentBroadcasts"
+			],
+			[
+				"_max",
+				"_maxDelayBeforeSending"
+			],
+			[
+				"flushTime",
+				"flushTimeToAvoid1000msRestriction"
+			],
+			[
+				"flushT",
+				"flushTimeToAvoid500msRestriction"
+			],
+			[
+				"flushTimeTo",
+				"flushTimeToAvoid250msRestriction"
+			],
+			[
+				"numFlus",
+				"numFlushesInLast250ms"
+			],
+			[
+				"_flu",
+				"_flushHistory"
+			],
+			[
+				"_maxMes",
+				"_maxMessagesPer250ms"
+			],
+			[
+				"_flus",
+				"_flush"
+			],
+			[
+				"_maxM",
+				"_maxMessagesPer500ms"
+			],
+			[
+				"inLast",
+				"inLast500ms"
+			],
+			[
+				"_maxMess",
+				"_maxMessagesPer1000ms"
+			],
+			[
+				"mesa",
+				"messageType"
+			],
+			[
+				"_lastPi",
+				"_lastPingId"
+			],
+			[
+				"_socket",
+				"_socketHandlers"
+			],
+			[
+				"_re",
+				"_receivePingResponse"
+			],
+			[
+				"tim",
+				"timeOffset"
+			],
+			[
+				"_game",
+				"_gameTime"
+			],
+			[
+				"ACIT",
+				"ACTION_UPDATE_SHADOWS"
+			],
+			[
+				"SquareGameServer",
+				"SquareGameServerNetworkHandler"
+			],
+			[
+				"SquareGameCLient",
+				"SquareGameClientController"
+			],
+			[
+				"SquareGameCLientN",
+				"SquareGameClientNetworkHandler"
+			],
+			[
+				"SquareGameSer",
+				"SquareGameServerNetworkHandler"
+			],
+			[
+				"_receiveStart",
+				"_receiveStartMovingEntityAction"
+			],
+			[
+				"START_MOV",
+				"START_MOVING_ENTITY"
+			],
+			[
+				"sendAc",
+				"sendActionToAllExcept"
+			],
+			[
+				"Square",
+				"SquareGamePlayer"
+			],
+			[
+				"_receiveSpawn",
+				"_receiveSpawnPlayerCommand"
+			],
+			[
+				"_receiveStopMoving",
+				"_receiveStopMovingPlayerCommand"
+			],
+			[
+				"recei",
+				"receiveControl"
+			],
+			[
+				"SquareGa",
+				"SquareGamePermissionValidator"
+			],
+			[
+				"_playerIsMov",
+				"_playerIsMovingDown"
+			],
+			[
+				"bridgs",
+				"bridgsSquareGameLibrary"
+			],
+			[
+				"inputList",
+				"inputListeners"
+			],
+			[
+				"SquareGame",
+				"SquareGameCanvasRenderer"
+			],
+			[
+				"inputLis",
+				"inputListener"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"Constant",
+				"ConstantTimeGameRunner"
+			],
+			[
+				"log",
+				"login"
+			],
+			[
+				"clickDialo",
+				"clickDialogAddButton"
+			],
+			[
+				"clickDIalog",
+				"clickDialogCancelButton"
+			],
+			[
+				"hard",
+				"hard_floor_value"
+			],
+			[
+				"load",
+				"loadComplexData"
+			],
+			[
+				"waitFor",
+				"waitForAsync"
+			],
+			[
+				"content_cate",
+				"content_category_id"
+			],
+			[
+				"_publisher",
+				"_publisherAction"
+			],
+			[
+				"_publisherDia",
+				"_publisherDialog"
+			],
+			[
+				"_publis",
+				"_publishers"
+			],
+			[
+				"_showEd",
+				"_showEditSection"
+			],
+			[
+				"change",
+				"changeInventoryDropDown"
+			],
+			[
+				"isBe",
+				"isBeingEdited"
+			],
+			[
+				"isBeing",
+				"isRowBeingEdited"
+			],
+			[
+				"hide",
+				"_hideFauxRow"
+			],
+			[
+				"_categoriesW",
+				"_universalCategoriesWidget"
+			],
+			[
+				"soft",
+				"softFloorValid"
+			],
+			[
+				"valid",
+				"validate"
+			],
+			[
+				"_softFlo",
+				"_hardFloorLessThanSoftFloor"
+			],
+			[
+				"softFLoorV",
+				"softFloorValue"
+			],
+			[
+				"valida",
+				"validationObj"
+			],
+			[
+				"currenc",
+				"currencySuffixes"
+			],
+			[
+				"_publishe",
+				"_publisherDialog"
+			],
+			[
+				"exclude",
+				"excludeSection"
+			],
+			[
+				"buyer",
+				"buyerTargetInput"
+			],
+			[
+				"buyerTarg",
+				"buyerTargetInput"
+			],
+			[
+				"buyerTart",
+				"buyerTargetInput"
+			],
+			[
+				"action",
+				"actions"
+			],
+			[
+				"_publisherDialo",
+				"_publisherDialogWidget"
+			],
+			[
+				"posit",
+				"position_default"
+			],
+			[
+				"_allowUnkn",
+				"_allowUnknownGender"
+			],
+			[
+				"_allowU",
+				"_allowUnknownAge"
+			],
+			[
+				"_stopPr",
+				"_stopPropagationHandler"
+			],
+			[
+				"stopEd",
+				"stopEditing"
+			],
+			[
+				"univer",
+				"universal_category_targets"
+			],
+			[
+				"_allow",
+				"_allowUnknownAge"
+			],
+			[
+				"stopEdit",
+				"_stopEditingRowBeingEdited"
+			],
+			[
+				"allwUn",
+				"allowUnknownGender"
+			],
+			[
+				"_allowUnk",
+				"_allowUnknownGender"
+			],
+			[
+				"allowUn",
+				"allowUnknownAge"
+			],
+			[
+				"_allowUn",
+				"_allowUnknownGender"
+			],
+			[
+				"customInclu",
+				"customIncludeList"
+			],
+			[
+				"customInc",
+				"customIncludeList"
+			],
+			[
+				"RateCardEdi",
+				"RateCardEditorRow"
+			],
+			[
+				"RateCardEditor",
+				"RateCardEditorColumn"
+			],
+			[
+				"valueBiasText",
+				"valueBiasTextBox"
+			],
+			[
+				"_valueBias",
+				"_valueBiasTextBoxSelector"
+			],
+			[
+				"valueBias",
+				"_valueBiasTextBoxSelector"
+			],
+			[
+				"_valueFloor",
+				"_valueFloorsSectionSelector"
+			],
+			[
+				"_inventory",
+				"_inventorySectionClass"
+			],
+			[
+				"_ivn",
+				"_inventoryDropDownSelector"
+			],
+			[
+				"mediaExc",
+				"mediaExcludesTitle"
+			],
+			[
+				"_unsaved",
+				"_unsavedMediaExcludes"
+			],
+			[
+				"allow",
+				"allowUnknownFoldPosition"
+			],
+			[
+				"foldPosit",
+				"foldPositionDropDown"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1400,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/javascripts/gamecommon.js",
+			"settings":
+			{
+				"buffer_size": 11103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/javascripts/gameclient.js",
+			"settings":
+			{
+				"buffer_size": 7730,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gameserver.js",
+			"settings":
+			{
+				"buffer_size": 8853,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 520,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.jade",
+			"settings":
+			{
+				"buffer_size": 205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "GamePlayer({ stateStorageFreq, maxRewind })\n	update(ms)\n	receiveAction(action, timeOffset)\n	getState()\n\nGame\n	update(ms)\n	receiveAction(action)\n	getState()\n	setState(state)\n\nGameEntity\n	update(ms)\n	receiveAction(action)\n	getState()\n	setState(state)\n\n\nGameRunner\n	start()\n	stop()\n	getController()\n\nGameController\n	receiveControl()\n	startMoving(dir)\n	stopMoving(dir)\n	spawn(state)\n\nGameRenderer\n	renderIn(ele)\n	render()\n	addInputListener()\n\nKeyboardInputListener\n	receiveInput(input)\n\nGameControlMapping\n	receiveInput(input)\n\n\n\nGamePlayer: can rewind actions\nGame: responsible for keeping track of game state and running forward\n	GameEntity\n\nGameRunner \nGameController\n\nGameRenderer: can render anything that has state\n	KeyboardInputListener\n	GameControlMapping\n\n\n\nThe Game just knows how to execute game logic.\nThe GamePlayer allows the Game to be rewinded and for actions to be queued, but doesn't know when to do so\n\n\n\n\n\n\n",
+			"settings":
+			{
+				"buffer_size": 923,
+				"line_ending": "Unix",
+				"name": "GamePlayer({ stateStorageFreq, maxRewind })"
+			}
+		},
+		{
+			"file": "squaregameserver.js",
+			"settings":
+			{
+				"buffer_size": 8218,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/javascripts/squaregameclient.js",
+			"settings":
+			{
+				"buffer_size": 9213,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bmyers/notes/2013-07 Making a networked game",
+			"settings":
+			{
+				"buffer_size": 8704,
+				"line_ending": "Unix",
+				"name": "Competitive game"
+			}
+		}
+	],
+	"build_system": "Packages/JSHint/JSHint.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"install p",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/bmyers/node/sisyphus-app/circlegameserver.js",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/circlegameclient.js",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/circlegame.js",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/squaregameclient.js",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/squaregame.js",
+		"/Users/bmyers/node/sisyphus-app/views/index.jade",
+		"/Users/bmyers/node/sisyphus-app/router.js",
+		"/Users/bmyers/node/sisyphus-app/package.json",
+		"/Users/bmyers/node/sisyphus-app/squaregameserver.js",
+		"/Users/bmyers/node/sisyphus-app/config/config.js",
+		"/Users/bmyers/notes/2013-07-11 Deploying Tango to test - FOR REALZ",
+		"/Users/bmyers/notes/2013-07-18 - Deploying to sand",
+		"/Users/bmyers/notes/2013-07-18 - Deploying to test and prod",
+		"/Users/bmyers/adnxs/instanceconfig/versions.conf",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/chatclient.js",
+		"/Users/bmyers/node/sisyphus-app/chat.js",
+		"/Users/bmyers/node/sisyphus-app/revisedgame.js",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/gameclient.js",
+		"/Users/bmyers/node/sisyphus-app/gameserver.js",
+		"/Users/bmyers/notes/2013-07-03 Tango knowledge transfer",
+		"/Users/bmyers/notes/2013-07-15 v1 Tango stuff",
+		"/Users/bmyers/notes/2013-07-11 Diagramming Tango",
+		"/Users/bmyers/notes/2013-06-26 - tango",
+		"/Users/bmyers/notes/2013-07-11 Adding members to Tango",
+		"/Users/bmyers/node/sisyphus-app/public/javascripts/game.js",
+		"/Users/bmyers/node/GameDiagram",
+		"/Users/bmyers/node/sisyphus-app/authrouter.js",
+		"/Users/bmyers/node/sisyphus-app/models.js",
+		"/Users/bmyers/node/sisyphus-app/views/layout.jade",
+		"/Users/bmyers/node/sisyphus-app/views/register.jade",
+		"/Users/bmyers/node/sisyphus-app/views/admin.jade",
+		"/Users/bmyers/node/sisyphus-app/views/login.jade",
+		"/Users/bmyers/Desktop/node.sublime-project",
+		"/Users/bmyers/node/sisyphus-app/game.js",
+		"/Users/bmyers/node/sisyphus-app/config.js",
+		"/Users/bmyers/node/sisyphus-app/resources/config.js",
+		"/Users/bmyers/node/sisyphus-app/resources/router.js",
+		"/Users/bmyers/node/sisyphus-app/.gitignore",
+		"/Users/bmyers/node/sisyphus-app/resources/baseconfig.js",
+		"/Users/bmyers/node/sisyphus-app/resources/constants.js",
+		"/Users/bmyers/notes/Adding",
+		"/Users/bmyers/notes/members",
+		"/Users/bmyers/notes/to",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/TFConfig/pilot-member-info.json",
+		"/Users/bmyers/adnxs/appconfig/config.php",
+		"/Users/bmyers/notes/2013-07-11 Deploying Tango to test",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/TFConfig/TFConfig.js",
+		"/Users/bmyers/adnxs/appconfig/v2config.php",
+		"/Users/bmyers/notes/2013-07-11",
+		"/Users/bmyers/notes/Adding members to Tango",
+		"/Users/bmyers/notes/Tango",
+		"/Users/bmyers/notes/A",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/PartnerSettings/PartnerSettings.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/RateCard.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/RateCard.mspec.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/DemographicsCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/SizeCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/Utils.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/data/unit_test_complex.json",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/BrandCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/FoldPositionCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/FoldPositionCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/RateCardRow.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/ValueCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/Controller/Edit/Edit.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/RateCard.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/ProposalViewer/ProposalViewer.js",
+		"/Users/bmyers/adnxs/hbui/master/application/config.php",
+		"/Users/bmyers/adnxs/hbui/master/application/config-base.php",
+		"/Users/bmyers/adnxs/hbui/master/v2/config-base.php",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/GeoCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/InventoryCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/PriorityCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/BlankCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/i18n/strings.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/BrandCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/GeoCell.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/InventoryCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/GeoCell.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/i18n/strings.json",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/RateCard.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/Utils.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/DemographicsCell.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/InventoryCell.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/ValueCell.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/cells/SizeCell.js",
+		"/Users/bmyers/adnxs/hbui/master/node_modules/less/test/css/strings.css",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/css/tf/rate_card.less",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/Test/Test.js",
+		"/Users/bmyers/adnxs/hbui/master/public/js/targeting/SizeTargeting.js",
+		"/Users/bmyers/adnxs/hbui/master/application/views/scripts/targeting/_size.phtml",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/data/debug.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/data/unit_test_simple.json",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/unit_test_complex.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/framework-public/anx/Console/Ui/Input/CreativeSizeChooser/CreativeSizeChooser.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/ActionMenu/ActionMenu.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/RateCard.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/RateCardRow.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/RateCard/data/default.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/css/tf/partner.less",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/debug.json",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/unit_test_value_errors.json",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/unit_test_simple.json",
+		"/Users/bmyers/Desktop/2013-07-02 RateCard changes (unit tests)/InventoryCell.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/cells/RateCardFauxRow.tmpl",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/UserUtils/UserUtils.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/DealUtils/DealUtils.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/ProposalChooser/ProposalChooser.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/PartnerRelationship/PartnerRelationship.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/Controller/Detail/Detail.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/ActivityStream/ActivityStream.mspec.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/Controller/List/List.mspec.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/TargetingModules/Inventory/UniversalCategories/UniversalCategories.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/TargetingModules/Inventory/InventoryWidget/InventoryWidget.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/TabbedInputDialog/TabbedInputDialog.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/framework-public/anx/Console/Ui/Input/UniversalCategoriesIncExc/UniversalCategoriesIncExc.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/framework-public/anx/Ui/Input/NestedIncludeExclude/NestedIncludeExclude.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/default.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/tf/ProposalViewer/ProposalViewer.mspec.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/RateCard.mspec.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/c2/Currencies/Currencies.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/public/tf/RateCard/data/dummysave.json",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/framework-public/anx/Console/ItemSetView/Category/Category.js",
+		"/Users/bmyers/adnxs/hbui/master/public/v2/framework-public/anx/Console/Ui/Input/MultiSelect/Category/Category.js",
+		"/Users/bmyers/adnxs/hbui/master/tests/functional/features/support/pages/publisher_page.rb",
+		"/Users/bmyers/Desktop/heroes.html",
+		"/Users/bmyers/adnxs/hbui/master/v2/framework2/public/anx/Console/Ui/Input/IncludeExclude/Country/Country.js",
+		"/Users/bmyers/adnxs/hbui/master/v2/framework2/public/anx/Console/Ui/Input/IncludeExclude/Publisher/Publisher.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"thirdHighestDelay",
+			"_additionsWithoutRaisingDelay",
+			"DOWN",
+			"Actual",
+			"ACTUAL",
+			"console.log",
+			"addDelay",
+			"Connection",
+			"Lag",
+			"\n			this._simulatedLagMin = params.simulatedLag.min;",
+			";\n",
+			"sim",
+			"console.log",
+			"Delayed",
+			"yed by",
+			"console.log",
+			"_simualtedLagMax",
+			"sim",
+			"Connec",
+			"mess",
+			"Handling delta",
+			"console.log",
+			"messgaes",
+			"this",
+			"onReceive",
+			"time",
+			"clientTime",
+			"onDeltaGenerated",
+			"underscore",
+			"_.",
+			"minDelay",
+			"_pings",
+			"self",
+			"time",
+			"onDeltaGenerated",
+			"Connection",
+			"onDeltaGenerated",
+			"Connection",
+			"Connec",
+			"Conn",
+			"onDeltaGenerated",
+			"handleCommand",
+			"onReceiveCommand",
+			"sendCommand",
+			"console.log",
+			"debug",
+			"handleInput",
+			"_playerids",
+			"sendState",
+			"setState",
+			"_deltaHistory",
+			"slice",
+			"handleDelta",
+			"Received delta",
+			"Receiving delta",
+			"playerr",
+			"sendDeltaToAll",
+			"SPAWN_ENTITY",
+			"setState",
+			"_game",
+			"CircleGameServer",
+			"ServerRunner",
+			"onDelta",
+			"_asDelta",
+			"_receiveCallbacks",
+			"maxMessagesSentPerSecond",
+			"maxDelayBeforeSending",
+			"ServerNetworkHandler",
+			"NetworkHandler",
+			"ClientNetworkHandler",
+			"onReceiveDelta",
+			"GameCommander",
+			"GameRenderer",
+			"receiveInput",
+			"KeyboardInputListener",
+			"_receiveCallbacks",
+			"action",
+			"receiveAction",
+			"Action",
+			"action",
+			"actions",
+			"action",
+			"_add",
+			"action",
+			"_timeOfLastUpdate",
+			"action",
+			"Action",
+			"receiveAction",
+			"_addAction",
+			"actions",
+			"receiveAction",
+			"_removeActionsBefore",
+			"_getActionsBetween",
+			"ction",
+			"_earliestActionTime",
+			"_actionHistory",
+			"CircleGame",
+			"GameLib",
+			"CircleGameClient",
+			"circle",
+			"Circle",
+			"receiveCommand",
+			"receiveDelta",
+			"onDelta",
+			"onCommand",
+			"receiveControl",
+			"onControl",
+			"onInput",
+			"receiveControl",
+			"receiveInput",
+			"action",
+			"_inputListeners",
+			"KeyboardInputListener",
+			"_controller",
+			"GameController",
+			"_controlReceiver",
+			"allb",
+			"receiveAction",
+			"setEntityDir",
+			"spawnEntity",
+			"console.log",
+			"setDir",
+			"'N'",
+			"_verticalMovement",
+			"_horizontalMovement",
+			"startMoving",
+			"null",
+			"'RIGHT'"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 1400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								510,
+								510
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/javascripts/gamecommon.js",
+					"settings":
+					{
+						"buffer_size": 11103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10905,
+								10905
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3923.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/javascripts/gameclient.js",
+					"settings":
+					{
+						"buffer_size": 7730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6434,
+								6434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2847.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gameserver.js",
+					"settings":
+					{
+						"buffer_size": 8853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5063,
+								5063
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1207.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 520,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								520,
+								520
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/index.jade",
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								922,
+								922
+							]
+						],
+						"settings":
+						{
+							"auto_name": "GamePlayer({ stateStorageFreq, maxRewind })",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "squaregameserver.js",
+					"settings":
+					{
+						"buffer_size": 8218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2589.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/javascripts/squaregameclient.js",
+					"settings":
+					{
+						"buffer_size": 9213,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/bmyers/notes/2013-07 Making a networked game",
+					"settings":
+					{
+						"buffer_size": 8704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8283,
+								8283
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Competitive game",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 228.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"index",
+				"views/index.jade"
+			],
+			[
+				"gameclie",
+				"public/javascripts/gameclient.js"
+			],
+			[
+				"gameser",
+				"gameserver.js"
+			],
+			[
+				"circlegame",
+				"public/javascripts/circlegame.js"
+			],
+			[
+				"index.j",
+				"views/index.jade"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"squaregamecli",
+				"public/javascripts/squaregameclient.js"
+			],
+			[
+				"squaregame",
+				"squaregameserver.js"
+			],
+			[
+				"index.jade",
+				"views/index.jade"
+			],
+			[
+				"router",
+				"router.js"
+			],
+			[
+				"config",
+				"config/config.js"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"squaregamecl",
+				"public/javascripts/squaregameclient.js"
+			],
+			[
+				"squaregae",
+				"squaregameserver.js"
+			],
+			[
+				"squaregame.js",
+				"public/javascripts/squaregame.js"
+			],
+			[
+				"chat",
+				"chat.js"
+			],
+			[
+				"game.",
+				"public/javascripts/game.js"
+			],
+			[
+				"index.ja",
+				"views/index.jade"
+			],
+			[
+				"index.",
+				"views/index.jade"
+			],
+			[
+				"htmlro",
+				"resources/htmlrouter.js"
+			],
+			[
+				"app.js",
+				"app.js"
+			],
+			[
+				"activi",
+				"master/public/v2/css/tf/activity.less"
+			],
+			[
+				"_header.css",
+				"master/public/v2/css/_header.css"
+			],
+			[
+				"console-1.5",
+				"master/public/v2/css/console-1.5.css"
+			],
+			[
+				"tfconfig",
+				"master/public/v2/tf/TFConfig/TFConfig.js"
+			],
+			[
+				"tfconfi",
+				"master/public/v2/tf/TFConfig/TFConfig.js"
+			],
+			[
+				"tfconfig.js",
+				"master/public/v2/tf/TFConfig/TFConfig.js"
+			],
+			[
+				"tfcongi",
+				"master/public/v2/tf/TFConfig/pilot-member-info.json"
+			],
+			[
+				"foldposi",
+				"master/public/v2/tf/RateCard/cells/FoldPositionCell.js"
+			],
+			[
+				"brandcell",
+				"cells/BrandCell.js"
+			],
+			[
+				"demographics",
+				"cells/DemographicsCell.js"
+			],
+			[
+				"utils.js",
+				"master/public/v2/tf/RateCard/Utils.js"
+			],
+			[
+				"unit_test",
+				"master/public/v2/tf/RateCard/data/unit_test_complex.json"
+			],
+			[
+				"sizecell",
+				"cells/SizeCell.js"
+			],
+			[
+				"ratecard",
+				"master/public/v2/tf/RateCard/RateCard.mspec.js"
+			],
+			[
+				"partnersettings.js",
+				"master/public/v2/tf/PartnerSettings/PartnerSettings.js"
+			],
+			[
+				"config-base",
+				"master/v2/config-base.php"
+			],
+			[
+				"config.php",
+				"master/application/config.php"
+			],
+			[
+				"tfconfigpilot",
+				"master/public/v2/tf/TFConfig/pilot-member-info.json"
+			],
+			[
+				"proposal",
+				"master/public/v2/tf/ProposalViewer/ProposalViewer.js"
+			],
+			[
+				"partnersetti",
+				"master/public/v2/tf/PartnerSettings/PartnerSettings.js"
+			],
+			[
+				"ratecardrow",
+				"master/public/v2/tf/RateCard/RateCardRow.js"
+			],
+			[
+				"valuecell",
+				"cells/ValueCell.js"
+			],
+			[
+				"geo",
+				"cells/GeoCell.js"
+			],
+			[
+				"strings.js",
+				"master/public/v2/tf/RateCard/i18n/strings.json"
+			],
+			[
+				"strings",
+				"master/node_modules/less/test/css/strings.css"
+			],
+			[
+				"valuec",
+				"cells/ValueCell.js"
+			],
+			[
+				"ratecard.less",
+				"master/public/v2/css/tf/rate_card.less"
+			],
+			[
+				"inventory",
+				"cells/InventoryCell.js"
+			],
+			[
+				"geocell",
+				"cells/GeoCell.js"
+			],
+			[
+				"creativesizes",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/CreativeSizeChooser/CreativeSizeChooser.js"
+			],
+			[
+				"debug",
+				"master/public/v2/tf/RateCard/data/debug.json"
+			],
+			[
+				"demogra",
+				"cells/DemographicsCell.js"
+			],
+			[
+				"foldpo",
+				"cells/FoldPositionCell.js"
+			],
+			[
+				"priorit",
+				"cells/PriorityCell.js"
+			],
+			[
+				"creativesizecho",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/CreativeSizeChooser/CreativeSizeChooser.js"
+			],
+			[
+				"sizecel",
+				"cells/SizeCell.js"
+			],
+			[
+				"foldpos",
+				"cells/FoldPositionCell.js"
+			],
+			[
+				"priori",
+				"cells/PriorityCell.js"
+			],
+			[
+				"rateca.m",
+				"master/public/v2/tf/RateCard/RateCard.mspec.js"
+			],
+			[
+				"test.js",
+				"master/public/v2/c2/Test/Test.js"
+			],
+			[
+				"brandce",
+				"cells/BrandCell.js"
+			],
+			[
+				"blankce",
+				"cells/BlankCell.js"
+			],
+			[
+				"priority",
+				"cells/PriorityCell.js"
+			],
+			[
+				"valuecel",
+				"cells/ValueCell.tmpl"
+			],
+			[
+				"value",
+				"cells/ValueCell.js"
+			],
+			[
+				"brand",
+				"cells/BrandCell.js"
+			],
+			[
+				"geoce",
+				"cells/GeoCell.tmpl"
+			],
+			[
+				"invento",
+				"cells/InventoryCell.js"
+			],
+			[
+				"partner",
+				"master/public/v2/css/tf/partner.less"
+			],
+			[
+				"rate_ca",
+				"master/public/v2/css/tf/rate_card.less"
+			],
+			[
+				"i18n/string",
+				"master/public/v2/tf/RateCard/i18n/strings.json"
+			],
+			[
+				"default.json",
+				"master/public/v2/tf/RateCard/data/default.json"
+			],
+			[
+				"debug.json",
+				"master/public/v2/tf/RateCard/data/debug.json"
+			],
+			[
+				"mspec",
+				"master/public/v2/tf/Controller/List/List.mspec.js"
+			],
+			[
+				"userutil",
+				"master/public/v2/c2/UserUtils/UserUtils.js"
+			],
+			[
+				"rate_card",
+				"master/public/v2/css/tf/rate_card.less"
+			],
+			[
+				"inventorycell",
+				"cells/InventoryCell.js"
+			],
+			[
+				"ratecar",
+				"master/public/v2/tf/RateCard/RateCard.js"
+			],
+			[
+				"proposalchoo",
+				"master/public/v2/tf/ProposalChooser/ProposalChooser.js"
+			],
+			[
+				"proposalviewer",
+				"master/public/v2/tf/ProposalViewer/ProposalViewer.js"
+			],
+			[
+				"proposalchooser",
+				"master/public/v2/tf/ProposalChooser/ProposalChooser.js"
+			],
+			[
+				"partnerrela",
+				"master/public/v2/tf/PartnerRelationship/PartnerRelationship.js"
+			],
+			[
+				"dealut",
+				"master/public/v2/tf/DealUtils/DealUtils.js"
+			],
+			[
+				"partnerrelation",
+				"master/public/v2/tf/PartnerRelationship/PartnerRelationship.js"
+			],
+			[
+				"partnerreati",
+				"master/public/v2/tf/PartnerRelationship/PartnerRelationship.js"
+			],
+			[
+				"tfcong",
+				"master/public/v2/tf/TFConfig/TFConfig.js"
+			],
+			[
+				"rate",
+				"master/public/v2/css/tf/rate_card.less"
+			],
+			[
+				"nestedinclude",
+				"master/public/v2/framework-public/anx/Ui/Input/NestedIncludeExclude/NestedIncludeExclude.js"
+			],
+			[
+				"universalcategoriesincexc",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/UniversalCategoriesIncExc/UniversalCategoriesIncExc.js"
+			],
+			[
+				"inventorywidget",
+				"master/public/v2/c2/TargetingModules/Inventory/InventoryWidget/InventoryWidget.js"
+			],
+			[
+				"tabbedinputdia",
+				"master/public/v2/c2/TabbedInputDialog/TabbedInputDialog.js"
+			],
+			[
+				"universalcategories",
+				"master/public/v2/c2/TargetingModules/Inventory/UniversalCategories/UniversalCategories.js"
+			],
+			[
+				"currencies",
+				"master/public/v2/c2/Currencies/Currencies.js"
+			],
+			[
+				"proposalview",
+				"master/public/v2/tf/ProposalViewer/ProposalViewer.mspec.js"
+			],
+			[
+				"rate_car",
+				"master/public/v2/css/tf/rate_card.less"
+			],
+			[
+				"itemsetview/catego",
+				"master/public/v2/framework-public/anx/Console/ItemSetView/Category/Category.js"
+			],
+			[
+				"multiselect/cate",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/MultiSelect/Category/Category.js"
+			],
+			[
+				"universalcategories.js",
+				"master/public/v2/c2/TargetingModules/Inventory/UniversalCategories/UniversalCategories.js"
+			],
+			[
+				"publisher",
+				"master/tests/functional/features/support/pages/publisher_page.rb"
+			],
+			[
+				"dialog",
+				"master/public/v2/framework-public/anx/DEPRECATED/Dialog/Dialog.js"
+			],
+			[
+				"editor.js",
+				"master/public/v2/c2/TargetingModules/Demographics/Editor/Editor.js"
+			],
+			[
+				"partner.less",
+				"master/public/v2/css/tf/partner.less"
+			],
+			[
+				"terms.tmpl",
+				"master/public/v2/tf/ProposalViewer/templates/terms.tmpl"
+			],
+			[
+				"empty.tmpl",
+				"master/public/v2/tf/ProposalViewer/templates/empty.tmpl"
+			],
+			[
+				"main.tmpl",
+				"master/public/v2/tf/ProposalViewer/templates/main.tmpl"
+			],
+			[
+				"proposalvi",
+				"master/public/v2/tf/ProposalViewer/ProposalViewer.js"
+			],
+			[
+				"dialog.js",
+				"master/public/v2/framework-public/anx/DEPRECATED/Dialog/Dialog.js"
+			],
+			[
+				"tabbeddia",
+				"master/public/v2/c2/TabbedDialog/TabbedDialog.js"
+			],
+			[
+				"tabbedinput",
+				"master/public/v2/c2/TabbedInputDialog/TabbedInputDialog.js"
+			],
+			[
+				"userutils",
+				"master/public/v2/c2/UserUtils/UserUtils.js"
+			],
+			[
+				"partner.l",
+				"master/public/v2/css/tf/partner.less"
+			],
+			[
+				"editor.html",
+				"master/public/v2/c2/TargetingModules/Demographics/Editor/Editor.html"
+			],
+			[
+				"agegroup",
+				"master/public/v2/c2/TargetingModules/Demographics/Partial/AgeGroupPreset.html"
+			],
+			[
+				"customcategoriesin",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/CustomCategoriesIncExc/CustomCategoriesIncExc.js"
+			],
+			[
+				"customcategories",
+				"master/public/v2/c2/TargetingModules/Inventory/CustomCategories/CustomCategories.js"
+			],
+			[
+				"consoleapi",
+				"master/public/v2/framework-public/anx/Console/Api2/Api2.js"
+			],
+			[
+				"universalcategoriesinc",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/UniversalCategoriesIncExc/UniversalCategoriesIncExc.js"
+			],
+			[
+				"universalcategor",
+				"master/public/v2/c2/TargetingModules/Inventory/UniversalCategories/UniversalCategories.js"
+			],
+			[
+				"creativesizechoo",
+				"master/public/v2/framework-public/anx/Console/Ui/Input/CreativeSizeChooser/CreativeSizeChooser.js"
+			],
+			[
+				"api2",
+				"master/public/v2/framework-public/anx/Console/Api2/Api2.js"
+			],
+			[
+				"main.js",
+				"master/public/v2/js/main.js"
+			],
+			[
+				"countries",
+				"master/public/v2/c2/Countries/Countries.js"
+			],
+			[
+				"countries.js",
+				"master/public/v2/c2/Countries/Countries.js"
+			],
+			[
+				"tconfig",
+				"master/public/v2/tf/TFConfig/TFConfig.js"
+			],
+			[
+				"daterangepickerb",
+				"master/public/v2/framework-public/anx/Ui/Input/DateRangePickerB/DateRangePickerB.js"
+			],
+			[
+				"partnersetting",
+				"master/public/v2/tf/PartnerSettings/PartnerSettings.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 198.0,
+	"status_bar_visible": true
+}
