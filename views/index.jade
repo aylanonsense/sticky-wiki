@@ -5,4 +5,33 @@ block scripts
   script(type='text/javascript', src='/javascripts/client.js')
 
 block content
+  #menu
+    form
+      | Text:
+      input#sticky-message(type="text")
+      br
+      | Ink:
+      select#sticky-text-color
+        option(value="black") Black
+        option(value="red") Red
+        option(value="blue") Blue
+        option(value="green") Green
+      br
+      | Paper:
+      select#sticky-paper-color
+        option(value="yellow") Yellow
+        option(value="pink") Pink
+        option(value="green") Green
+        option(value="blue") Blue
+        option(value="orange") Orange
+      br
+      | Pin:
+      select#sticky-pin-color
+        option(value="") Random
+        option(value="red") Red
+        option(value="green") Green
+        option(value="yellow") Yellow
+        option(value="blue") Blue
+      br
+      input#sticky-create(type="button", value="Create Sticky")
   #canvas

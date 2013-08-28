@@ -24,6 +24,26 @@ var StickyBoard = (function() {
 		}
 		return ele;
 	}
+	function boundSVGText(txt, width, height) {
+		var words = txt.firstChild.data.split(' ');
+		txt.firstChild.data = '';
+		var tspan = createSVG('tspan', {
+			x: 0
+		}, words[0]);
+		txt.appendChild(tspan);
+		for(var i = 1; i < words.length; i++) {
+			var len = tspan.firstChild.data.length;
+			tspan.firstChild.data += ' ' + words[i];
+			if(tspan.getComputedTextLength() > width) {
+				tspan.firstChild.data = tspan.firstChild.data.slice(0, len);
+				tspan = createSVG('tspan', {
+					x: 0,
+					dy: 18
+				}, words[i]);
+				txt.appendChild(tspan);
+			}
+		}
+	}
 
 
 	function StickyBoard(conn) {
@@ -68,13 +88,13 @@ var StickyBoard = (function() {
 		this._previews[seqNum] = sticky;
 	};
 	StickyBoard.prototype._replaceStickyPreview = function(stickyParams, seqNum) {
-		this._objectLayer.removeChild(this._previews[seqNum].getRoot());
+		this._previews[seqNum].removeSelf();
 		delete this._previews[seqNum];
 		this._drawSticky(stickyParams);
 	};
 	StickyBoard.prototype._drawSticky = function(stickyParams, isPreview) {
 		var sticky =  new Sticky(stickyParams);
-		this._objectLayer.appendChild(sticky.getRoot());
+		sticky.appendTo(this._objectLayer);
 		return sticky;
 	};
 	StickyBoard.prototype.getRoot = function() {
@@ -95,7 +115,6 @@ var StickyBoard = (function() {
 			rotation: 0
 		});
 		this._digestParams(params);
-		this._refreshSVG();
 	}
 	Sticky.prototype._digestParams = function(params) {
 		if(typeof params.id !== 'undefined') this._id = params.id;
@@ -120,6 +139,15 @@ var StickyBoard = (function() {
 			transform: 'rotate(' + this._rotation + ' 0,0)'
 		});
 		this._root.appendChild(paper);
+		var g = createSVG('g', {
+			transform: 'translate(-45,15),rotate(' + this._rotation + ' 0,0)'
+		});
+		this._root.appendChild(g);
+		var txt = createSVG('text', {
+			fill: this._textColor
+		}, this._text);
+		g.appendChild(txt);
+		boundSVGText(txt, 90, 80);
 		var pin = createSVG('circle', {
 			cx: 0,
 			cy: 0,
@@ -129,33 +157,15 @@ var StickyBoard = (function() {
 			strokeWidth: 1
 		});
 		this._root.appendChild(pin);
-		var txt = createSVG('text', {
-			x: -45,
-			y: 20,
-			fill: this._textColor,
-			transform: 'rotate(' + this._rotation + ' 0,0)'
-		}, this._text); //TODO allow text to be added
-		this._root.appendChild(txt);
 	};
-	Sticky.prototype.getRoot = function() {
-		return this._root;
+	Sticky.prototype.appendTo = function(element) {
+		element.appendChild(this._root);
+		this._refreshSVG();
+	};
+	Sticky.prototype.removeSelf = function() {
+		this._root.parentNode.removeChild(this._root);
 	};
 
 
 	return StickyBoard;
 })();
-
-
-
-//create templates
-/*var defs = createSVG('defs');
-this._svg.appendChild(defs);*/
-/*StickyBoard.prototype._instantiateTemplate = function(template, attrs) {
-	if(attrs) {
-		attrs.def = template;
-	}
-	else {
-		attrs = { def: template };
-	}
-	return createSVG('use', attrs);
-};*/
