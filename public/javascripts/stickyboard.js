@@ -11,6 +11,9 @@ var StickyBoard = (function() {
 				if(attrName === 'strokeWidth') {
 					attrName = 'stroke-width';
 				}
+				else if(attrName === 'fontSize') {
+					attrName = 'font-size';
+				}
 				if(attrName === 'def') {
 					ele.setAttributeNS(XLINK_NAMESPACE, 'href', '#' + attrs[key]);
 				}
@@ -24,12 +27,13 @@ var StickyBoard = (function() {
 		}
 		return ele;
 	}
-	function boundSVGText(txt, width, height) {
+	function fitTextToBox(txt, width, height, sizesToTry, horizontalJustify) {
 		var words = txt.firstChild.data.split(' ');
 		txt.firstChild.data = '';
 		var tspan = createSVG('tspan', {
 			x: 0
 		}, words[0]);
+		var tspans = [ tspan ];
 		txt.appendChild(tspan);
 		for(var i = 1; i < words.length; i++) {
 			var len = tspan.firstChild.data.length;
@@ -38,10 +42,16 @@ var StickyBoard = (function() {
 				tspan.firstChild.data = tspan.firstChild.data.slice(0, len);
 				tspan = createSVG('tspan', {
 					x: 0,
-					dy: 18
+					dy: 12
 				}, words[i]);
+				tspans.push(tspan);
 				txt.appendChild(tspan);
 			}
+		}
+		if(horizontalJustify === 'center') {
+			tspans.forEach(function(tspan) {
+				tspan.setAttributeNS(null, 'x', '' + ((width - tspan.getComputedTextLength()) / 2));
+			});
 		}
 	}
 
@@ -140,14 +150,15 @@ var StickyBoard = (function() {
 		});
 		this._root.appendChild(paper);
 		var g = createSVG('g', {
-			transform: 'translate(-45,15),rotate(' + this._rotation + ' 0,0)'
+			transform: 'rotate(' + this._rotation + ' 0,0),translate(-45,15)'
 		});
 		this._root.appendChild(g);
 		var txt = createSVG('text', {
-			fill: this._textColor
+			fill: this._textColor,
+			fontSize: '12pt'
 		}, this._text);
 		g.appendChild(txt);
-		boundSVGText(txt, 90, 80);
+		fitTextToBox(txt, 90, 80, [ '10pt', '8pt' ], 'center');
 		var pin = createSVG('circle', {
 			cx: 0,
 			cy: 0,
