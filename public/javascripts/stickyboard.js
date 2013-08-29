@@ -137,13 +137,27 @@ var StickyBoard = (function() {
 		if(typeof params.rotation !== 'undefined') this._rotation = params.rotation;
 	};
 	Sticky.prototype._refreshSVG = function() {
+		var paperColor;
+		switch(this._paperColor) {
+			case 'pink': paperColor = '#f5d4f5'; break;
+			case 'green': paperColor = '#ddf8e2'; break;
+			case 'blue': paperColor = '#d4edf5'; break;
+			case 'orange': paperColor = '#f8e3cc'; break;
+			default: paperColor = '#fdfbd5'; break;
+		}
+		var inkColor;
+		switch(this._textColor) {
+			case 'red': inkColor = '#c71227'; break;
+			case 'blue': inkColor = '#1925ac'; break;
+			default: inkColor = '#222222'; break;
+		}
 		this._root.setAttribute('transform', 'translate(' + this._x + ', ' + this._y + ')');
 		var paper = createSVG('rect', {
 			x: -50,
 			y: -2,
 			width: 100,
 			height: 100,
-			fill: this._paperColor,
+			fill: paperColor,
 			stroke: 'black',
 			strokeWidth: 1,
 			transform: 'rotate(' + this._rotation + ' 0,0)'
@@ -154,7 +168,7 @@ var StickyBoard = (function() {
 		});
 		this._root.appendChild(g);
 		var txt = createSVG('text', {
-			fill: this._textColor,
+			fill: inkColor,
 			fontSize: '12pt'
 		}, this._text);
 		g.appendChild(txt);
