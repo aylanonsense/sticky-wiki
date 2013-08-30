@@ -27,14 +27,33 @@ var StickyBoard = (function() {
 		}
 		return ele;
 	}
-	function fitTextToBox(txt, width, height, sizesToTry, horizontalJustify) {
+	function fitTextToBox(txt, width, height, sizesToTry, horizontalJustify, verticalJustify) {
 		var words = txt.firstChild.data.split(' ');
-		txt.firstChild.data = '';
+		while(txt.firstChild !== null) {
+			txt.removeChild(txt.firstChild);
+		}
+		if(!fitTextToBoxHelper(txt, words, width, height, null, horizontalJustify, verticalJustify)) {
+			for(var i = 0; i < sizesToTry.length; i++) {
+				while(txt.firstChild !== null) {
+					txt.removeChild(txt.firstChild);
+				}
+				if(fitTextToBoxHelper(txt, words, width, height, sizesToTry[i], horizontalJustify, verticalJustify)) {
+					break;
+				}
+			}
+		}
+	}
+	function fitTextToBoxHelper(txt, words, width, height, size, horizontalJustify, verticalJustify) {
 		var tspan = createSVG('tspan', {
 			x: 0
 		}, words[0]);
+		if(size) {
+			txt.setAttributeNS(null, 'font-size', size);
+		}
 		var tspans = [ tspan ];
 		txt.appendChild(tspan);
+		var violatedWidthWithSingleWord = tspan.getComputedTextLength() > width;
+		var lineHeight = 0.9 * txt.getBBox().height;
 		for(var i = 1; i < words.length; i++) {
 			var len = tspan.firstChild.data.length;
 			tspan.firstChild.data += ' ' + words[i];
@@ -42,10 +61,11 @@ var StickyBoard = (function() {
 				tspan.firstChild.data = tspan.firstChild.data.slice(0, len);
 				tspan = createSVG('tspan', {
 					x: 0,
-					dy: 12
+					dy: lineHeight
 				}, words[i]);
 				tspans.push(tspan);
 				txt.appendChild(tspan);
+				violatedWidthWithSingleWord = violatedWidthWithSingleWord || (tspan.getComputedTextLength() > width);
 			}
 		}
 		if(horizontalJustify === 'center') {
@@ -53,6 +73,14 @@ var StickyBoard = (function() {
 				tspan.setAttributeNS(null, 'x', '' + ((width - tspan.getComputedTextLength()) / 2));
 			});
 		}
+		if(verticalJustify === 'center') {
+			console.log("txt height is", txt.getBBox().height);
+			var offset = (height - txt.getBBox().height) / 2;
+			console.log("  offset is", offset);
+			tspans[0].setAttributeNS(null, 'y', '' + offset);
+			console.log("  now is", tspans[0].getAttributeNS(null, 'dy'));
+		}
+		return txt.getBBox().height <= height && !violatedWidthWithSingleWord;
 	}
 
 
@@ -168,11 +196,12 @@ var StickyBoard = (function() {
 		});
 		this._root.appendChild(g);
 		var txt = createSVG('text', {
+			y: 5,
 			fill: inkColor,
 			fontSize: '12pt'
 		}, this._text);
 		g.appendChild(txt);
-		fitTextToBox(txt, 90, 80, [ '10pt', '8pt' ], 'center');
+		fitTextToBox(txt, 90, 90, [ '10pt', '8pt', '6pt', '4pt' ], 'center', 'center');
 		var pin = createSVG('circle', {
 			cx: 0,
 			cy: 0,
