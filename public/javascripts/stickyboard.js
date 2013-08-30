@@ -183,6 +183,13 @@ var StickyBoard = (function() {
 			case 'blue': inkColor = '#1925ac'; break;
 			default: inkColor = '#222222'; break;
 		}
+		var pinColor;
+		switch(this._pinColor) {
+			case 'green': pinColor = "#1bc530"; break;
+			case 'yellow': pinColor = "#e0d228"; break;
+			case 'blue': pinColor = "#4f6eec"; break;
+			default: pinColor = "#f0593d"; break;
+		}
 		this._root.setAttribute('transform', 'translate(' + this._x + ', ' + this._y + ')');
 		var paper = createSVG('rect', {
 			x: -50,
@@ -210,7 +217,7 @@ var StickyBoard = (function() {
 			cx: 0,
 			cy: 0,
 			r: 5,
-			fill: this._pinColor,
+			fill: pinColor,
 			stroke: 'black',
 			strokeWidth: 1
 		});
