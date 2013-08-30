@@ -111,8 +111,12 @@ var StickyBoard = (function() {
 		this._conn.on('replace_sticky', function(data) {
 			self._replaceStickyPreview(data.sticky, data.seqNum);
 		});
+		this._conn.on('move_sticky', function(data) {
+			self._moveSticky(data.stickyId, data.x, data.y);
+		});
 		this._nextSequenceNum = 0;
 		this._previews = {};
+		this._stickies = {};
 	}
 	StickyBoard.prototype.createSticky = function(sticky) {
 		var seqNum = this._nextSequenceNum++;
@@ -125,6 +129,16 @@ var StickyBoard = (function() {
 			sticky: sticky
 		});
 	};
+	StickyBoard.prototype._sendMoveSticky = function(sticky) {
+		this._conn.emit('move_sticky', {
+			stickyId: sticky.getId(),
+			x: sticky.getX(),
+			y: sticky.getY()
+		});
+	};
+	StickyBoard.prototype._moveSticky = function(stickyId, x, y) {
+		this._stickies[stickyId].moveTo(x, y);
+	};
 	StickyBoard.prototype._drawStickyPreview = function(stickyParams, seqNum) {
 		var sticky = this._drawSticky(stickyParams, true);
 		this._previews[seqNum] = sticky;
@@ -135,8 +149,9 @@ var StickyBoard = (function() {
 		this._drawSticky(stickyParams);
 	};
 	StickyBoard.prototype._drawSticky = function(stickyParams, isPreview) {
-		var sticky =  new Sticky(stickyParams);
+		var sticky =  new Sticky(this, stickyParams);
 		sticky.appendTo(this._objectLayer);
+		this._stickies[sticky.getId()] = sticky;
 		return sticky;
 	};
 	StickyBoard.prototype.getRoot = function() {
@@ -144,7 +159,8 @@ var StickyBoard = (function() {
 	};
 
 
-	function Sticky(params) {
+	function Sticky(board, params) {
+		this._board = board;
 		this._root = createSVG('g');
 		this._digestParams({
 			id: -1,
@@ -158,6 +174,22 @@ var StickyBoard = (function() {
 		});
 		this._digestParams(params);
 	}
+	Sticky.prototype.getId = function() {
+		return this._id;
+	};
+	Sticky.prototype.getX = function() {
+		return this._x;
+	};
+	Sticky.prototype.getY = function() {
+		return this._y;
+	};
+	Sticky.prototype.moveTo = function(x, y) {
+		var parent = this._root.parentNode;
+		this._x = x;
+		this._y = y;
+		this.removeSelf();
+		this.appendTo(parent);
+	};
 	Sticky.prototype._digestParams = function(params) {
 		if(typeof params.id !== 'undefined') this._id = params.id;
 		if(typeof params.text !== 'undefined') this._text = params.text;
@@ -234,6 +266,7 @@ var StickyBoard = (function() {
 		});
 		var self = this;
 		$(dragArea).on('mousedown', function(evt) {
+			self._root.parentNode.appendChild(self._root);
 			var stickyStartingPos = { x: self._x, y: self._y };
 			var start = { x: evt.pageX, y: evt.pageY };
 			function moveSticky(evt) {
@@ -253,6 +286,7 @@ var StickyBoard = (function() {
 				this.setAttributeNS(null, 'height', 100);
 				$(this).off('mousemove', moveSticky);
 				$(this).off('mouseup', stopMovingSticky);
+				self._board._sendMoveSticky(self); //cheating! cheating!
 			}
 			this.setAttributeNS(null, 'x', -1000);
 			this.setAttributeNS(null, 'y', -952);
