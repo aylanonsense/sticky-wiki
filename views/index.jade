@@ -7,16 +7,18 @@ block scripts
 block content
   #menu
     form
-      | Text:
-      input#sticky-message(type="text")
+      h2 Sticky Wiki
+      h3 "What fun things could the UI team do together?"
+      label(for="sticky-message") Your idea:
+        textarea#sticky-message(rows="4",cols="23")
       br
-      | Ink:
+      label(for="sticky-text-color") Ink:
       select#sticky-text-color
         option(value="black") Black
         option(value="blue") Blue
         option(value="red") Red
       br
-      | Paper:
+      label(for="sticky-paper-color") Paper:
       select#sticky-paper-color
         option(value="yellow") Yellow
         option(value="pink") Pink
@@ -24,13 +26,12 @@ block content
         option(value="blue") Blue
         option(value="orange") Orange
       br
-      | Pin:
+      label(for="sticky-pin-color") Pin:
       select#sticky-pin-color
-        option(value="") Random
         option(value="red") Red
         option(value="green") Green
         option(value="yellow") Yellow
         option(value="blue") Blue
       br
-      input#sticky-create(type="button", value="Create Sticky")
+      input#sticky-create(type="submit", value="Create Sticky")
   #canvas
