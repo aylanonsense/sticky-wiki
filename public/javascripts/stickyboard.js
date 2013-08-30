@@ -222,6 +222,46 @@ var StickyBoard = (function() {
 			strokeWidth: 1
 		});
 		this._root.appendChild(pin);
+		var dragArea = createSVG('rect', {
+			x: -50,
+			y: -2,
+			width: 100,
+			height: 100,
+			fill: '#ff00ff',
+			'fill-opacity': 0.0000001, //some browsers don't register clicks if this is 0
+			stroke: 'none',
+			transform: 'rotate(' + this._rotation + ' 0,0)'
+		});
+		var self = this;
+		$(dragArea).on('mousedown', function(evt) {
+			var stickyStartingPos = { x: self._x, y: self._y };
+			var start = { x: evt.pageX, y: evt.pageY };
+			function moveSticky(evt) {
+				var end = { x: evt.pageX, y: evt.pageY };
+				self._x = stickyStartingPos.x + end.x - start.x;
+				self._y = stickyStartingPos.y + end.y - start.y;
+				self._root.setAttribute('transform', 'translate(' + self._x + ', ' + self._y + ')');
+			}
+			function stopMovingSticky(evt) {
+				var end = { x: evt.pageX, y: evt.pageY };
+				self._x = stickyStartingPos.x + end.x - start.x;
+				self._y = stickyStartingPos.y + end.y - start.y;
+				self._root.setAttribute('transform', 'translate(' + self._x + ', ' + self._y + ')');
+				this.setAttributeNS(null, 'x', -50);
+				this.setAttributeNS(null, 'y', -2);
+				this.setAttributeNS(null, 'width', 100);
+				this.setAttributeNS(null, 'height', 100);
+				$(this).off('mousemove', moveSticky);
+				$(this).off('mouseup', stopMovingSticky);
+			}
+			this.setAttributeNS(null, 'x', -1000);
+			this.setAttributeNS(null, 'y', -952);
+			this.setAttributeNS(null, 'width', 2000);
+			this.setAttributeNS(null, 'height', 2000);
+			$(this).on('mousemove', moveSticky);
+			$(this).on('mouseup', stopMovingSticky);
+		});
+		this._root.appendChild(dragArea);
 	};
 	Sticky.prototype.appendTo = function(element) {
 		element.appendChild(this._root);
