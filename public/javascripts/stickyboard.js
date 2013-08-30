@@ -73,12 +73,16 @@ var StickyBoard = (function() {
 				tspan.setAttributeNS(null, 'x', '' + ((width - tspan.getComputedTextLength()) / 2));
 			});
 		}
+		else if(horizontalJustify === 'right') {
+			tspans.forEach(function(tspan) {
+				tspan.setAttributeNS(null, 'x', '' + (width - tspan.getComputedTextLength()));
+			});
+		}
 		if(verticalJustify === 'center') {
-			console.log("txt height is", txt.getBBox().height);
-			var offset = (height - txt.getBBox().height) / 2;
-			console.log("  offset is", offset);
-			tspans[0].setAttributeNS(null, 'y', '' + offset);
-			console.log("  now is", tspans[0].getAttributeNS(null, 'dy'));
+			tspans[0].setAttributeNS(null, 'y', '' + ((height - txt.getBBox().height) / 2));
+		}
+		else if(verticalJustify === 'bottom') {
+			tspans[0].setAttributeNS(null, 'y', '' + ((height - txt.getBBox().height)));
 		}
 		return txt.getBBox().height <= height && !violatedWidthWithSingleWord;
 	}
