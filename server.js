@@ -37,7 +37,8 @@ StickyServer.prototype._sendAllStickies = function(conn) {
 					y: stickyRecord.y,
 					textColor: stickyRecord.textColor,
 					paperColor: stickyRecord.paperColor,
-					pinColor: stickyRecord.pinColor
+					pinColor: stickyRecord.pinColor,
+					rotation: stickyRecord.rotation
 				});
 			});
 			conn.io.emit('draw_stickies', stickies); //TODO sort by last modified
