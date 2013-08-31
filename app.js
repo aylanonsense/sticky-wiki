@@ -6,6 +6,7 @@ var config = require('./config/config');
 var router = require('./router');
 var models = require('./models');
 var StickyServer = require('./server');
+var api = require('./api');
 var app;
 var stickyServer;
 
@@ -29,6 +30,7 @@ app.io.route('join_sticky_board', function(req) {
 	stickyServer.addConnection(req);
 });
 app.get('/', router.renderIndex);
+api.addRoutes(app);
 
 app.listen(config.server.port);
 
