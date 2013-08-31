@@ -29,6 +29,9 @@ StickyServer.prototype._sendAllStickies = function(conn) {
 		}
 		else {
 			var stickies = [];
+			stickyRecords.sort(function(a, b) { //TODO sort using mongoose instead
+				return a.lastModified.getTime() - b.lastModified.getTime();
+			});
 			stickyRecords.forEach(function(stickyRecord) {
 				stickies.push({
 					id: stickyRecord.id,
@@ -41,7 +44,7 @@ StickyServer.prototype._sendAllStickies = function(conn) {
 					rotation: stickyRecord.rotation
 				});
 			});
-			conn.io.emit('draw_stickies', stickies); //TODO sort by last modified
+			conn.io.emit('draw_stickies', stickies);
 		}
 	});
 };
