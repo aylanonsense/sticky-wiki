@@ -12,25 +12,28 @@ function addRoutes(app) {
 			res.send(sticky);
 		});
 	});
+	app.delete('/api/sticky/:id', function(req, res) {
+		deleteSticky(req.params.id, function(sticky) {
+			res.send(sticky);
+		});
+	});
 }
 function getSticky(id, callback) {
 	Sticky.find({ _id: id }, function(err, stickyRecord) {
 		if(err || !stickyRecord) {
-			callback({ sticky: null });
+			callback(null);
 		}
 		else {
 			stickyRecord = stickyRecord[0];
 			callback({
-				sticky: {
-					id: stickyRecord.id,
-					text: stickyRecord.text,
-					x: stickyRecord.x,
-					y: stickyRecord.y,
-					textColor: stickyRecord.textColor,
-					paperColor: stickyRecord.paperColor,
-					pinColor: stickyRecord.pinColor,
-					rotation: stickyRecord.rotation
-				}
+				id: stickyRecord.id,
+				text: stickyRecord.text,
+				x: stickyRecord.x,
+				y: stickyRecord.y,
+				textColor: stickyRecord.textColor,
+				paperColor: stickyRecord.paperColor,
+				pinColor: stickyRecord.pinColor,
+				rotation: stickyRecord.rotation
 			});
 		}
 	});
@@ -38,7 +41,7 @@ function getSticky(id, callback) {
 function getAllStickies(callback) {
 	Sticky.find(function(err, stickyRecords) {
 		if(err) {
-			callback({ stickies: [] });
+			callback([]);
 		}
 		else {
 			var stickies = [];
@@ -57,7 +60,28 @@ function getAllStickies(callback) {
 					rotation: stickyRecord.rotation
 				});
 			});
-			callback({ stickies: stickies });
+			callback(stickies);
+		}
+	});
+}
+function deleteSticky(id, callback) {
+	Sticky.find({ _id: id }, function(err, stickyRecord) {
+		if(err || !stickyRecord) {
+			callback(false);
+		}
+		else {
+			stickyRecord = stickyRecord[0];
+			stickyRecord.remove();
+			callback({
+				id: stickyRecord.id,
+				text: stickyRecord.text,
+				x: stickyRecord.x,
+				y: stickyRecord.y,
+				textColor: stickyRecord.textColor,
+				paperColor: stickyRecord.paperColor,
+				pinColor: stickyRecord.pinColor,
+				rotation: stickyRecord.rotation
+			});
 		}
 	});
 }
@@ -65,3 +89,4 @@ function getAllStickies(callback) {
 exports.addRoutes = addRoutes;
 exports.getSticky = getSticky;
 exports.getAllStickies = getAllStickies;
+exports.deleteSticky = deleteSticky;

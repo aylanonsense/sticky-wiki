@@ -1,26 +1,24 @@
 extends layout
 
+block scripts
+  script(type='text/javascript', src='/javascripts/admin.js')
+
 block content
   h1 Admin Console
-  h2 Users
-  if users
-    table.users
+  h2 Stickies
+  if stickies
+    table.stickies
       thead
         tr
-          th Date Created
-          th Username
-          th E-mail
-          th Password
-          th Salt
-          th Admin
+          th ID
+          th Text
+          th
       tbody
-        for user in users
+        for sticky in stickies
           tr
-            td #{user.dateCreated.getMonth()+1}/#{user.dateCreated.getDate()}/#{user.dateCreated.getFullYear()}
-            td= user.username
-            td= user.email
-            td #{user.hashedPassword.slice(0,6)}...
-            td #{user.salt.slice(0,6)}...
-            td= user.isAdmin
+            td= sticky.text
+            td
+              a(href="##{sticky.id}") Delete
   else
-    p No users
+    table.stickies
+    p No stickies

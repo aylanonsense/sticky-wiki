@@ -29,7 +29,7 @@ app.use(express.session({
 app.io.route('join_sticky_board', function(req) {
 	stickyServer.addConnection(req);
 });
-app.get('/', router.renderIndex);
+router.addRoutes(app);
 api.addRoutes(app);
 
 app.listen(config.server.port);
