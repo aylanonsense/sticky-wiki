@@ -1,11 +1,22 @@
 var models = require('./models');
 var Sticky = models.Sticky;
 var Sticker = models.Sticker;
+var StickyMove = models.StickyMove;
 
 function addRoutes(app) {
 	app.get('/api/stickies', function(req, res) {
 		getAllStickies(function(stickies) {
 			res.send(stickies);
+		});
+	});
+	app.get('/api/stickers', function(req, res) {
+		getAllStickers(function(stickers) {
+			res.send(stickers);
+		});
+	});
+	app.get('/api/moves', function(req, res) {
+		getAllStickyMoves(function(moves) {
+			res.send(moves);
 		});
 	});
 	app.get('/api/sticky/:id', function(req, res) {
@@ -134,6 +145,27 @@ function deleteSticker(id, callback) {
 		}
 	});
 }
+function getAllStickyMoves(callback) {
+	StickyMove.find(function(err, stickyMoveRecords) {
+		if(err) {
+			callback([]);
+		}
+		else {
+			var stickyMoves = [];
+			stickyMoveRecords.sort(function(a, b) { //TODO sort using mongoose instead
+				return a.dateMoved.getTime() - b.dateMoved.getTime();
+			});
+			stickyMoveRecords.forEach(function(stickyMoveRecord) {
+				stickyMoves.push({
+					stickyId: stickyMoveRecord.stickyId,
+					from: { x: stickyMoveRecord.from.x, y: stickyMoveRecord.from.y },
+					to: { x: stickyMoveRecord.to.x, y: stickyMoveRecord.to.y }
+				});
+			});
+			callback(stickyMoves);
+		}
+	});
+}
 
 exports.addRoutes = addRoutes;
 exports.getSticky = getSticky;
@@ -141,3 +173,4 @@ exports.getAllStickies = getAllStickies;
 exports.deleteSticky = deleteSticky;
 exports.getAllStickers = getAllStickers;
 exports.deleteSticker = deleteSticker;
+exports.getAllStickyMoves = getAllStickyMoves;

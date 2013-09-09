@@ -36,5 +36,14 @@ stickerSchema.virtual('id').get(function() {
 });
 var Sticker = mongoose.model('Sticker', stickerSchema);
 
+var stickyMoveSchema = new mongoose.Schema({
+	stickyId: { type: mongoose.Schema.Types.ObjectId },
+	from: { x: { type: Number }, y: { type: Number } },
+	to: { x: { type: Number }, y: { type: Number } },
+	dateMoved: { type: Date, default: Date.now }
+});
+var StickyMove = mongoose.model('StickyMove', stickyMoveSchema);
+
 exports.Sticky = Sticky;
 exports.Sticker = Sticker;
+exports.StickyMove = StickyMove;

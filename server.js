@@ -1,6 +1,7 @@
 var models = require('./models');
 var Sticky = models.Sticky;
 var Sticker = models.Sticker;
+var StickyMove = models.StickyMove;
 
 function StickyServer() {
 	this._room = 'sticky_board_' + (this.NEXT_ROOM_ID++);
@@ -212,6 +213,12 @@ StickyServer.prototype._handleStickyMoveRequest = function(conn, clientId, stick
 				}
 				else {
 					conn.io.room(self._room).broadcast('move_sticky', { stickyId: stickyId, x: x, y: y});
+					var stickyMoveRecord = new StickyMove({
+						stickyId: stickyRecord.id,
+						from: { x: oldX, y: oldY },
+						to: { x: x, y: y }
+					});
+					stickyMoveRecord.save(function(err) { });
 				}
 			});
 		}
