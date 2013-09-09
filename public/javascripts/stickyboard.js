@@ -146,7 +146,13 @@ var StickyBoard = (function() {
 		});
 	};
 	StickyBoard.prototype._moveSticky = function(stickyId, x, y) {
-		this._stickies[stickyId].moveTo(x, y);
+		var sticky = this._stickies[stickyId];
+		if(sticky) {
+			sticky.moveTo(x, y);
+		}
+		else {
+			console.warn("Sticky " + stickyId + " not found to move to " + x + ", " + y);
+		}
 	};
 	StickyBoard.prototype._drawStickyPreview = function(stickyParams, seqNum) {
 		var sticky = this._drawSticky(stickyParams, true);

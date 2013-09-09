@@ -8,7 +8,11 @@ var stickySchema = new mongoose.Schema({
 	paperColor: { type: String },
 	pinColor: { type: String },
 	rotation: { type: Number },
-	lastModified: { type: Date, default: Date.now }
+	lastModified: { type: Date, default: Date.now },
+	dateCreated: { type: Date, default: Date.now },
+	authorClientId: { type: Number },
+	authorSessionId: { type: String },
+	authorAddress: { type: String }
 });
 stickySchema.virtual('id').get(function() {
 	return this._id;
@@ -21,7 +25,11 @@ var stickerSchema = new mongoose.Schema({
 	x: { type: Number },
 	y: { type: Number },
 	rotation: { type: Number },
-	lastModified: { type: Date, default: Date.now }
+	lastModified: { type: Date, default: Date.now },
+	dateCreated: { type: Date, default: Date.now },
+	authorClientId: { type: Number },
+	authorSessionId: { type: String },
+	authorAddress: { type: String }
 });
 stickerSchema.virtual('id').get(function() {
 	return this._id;

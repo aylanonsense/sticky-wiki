@@ -13,13 +13,13 @@ StickyServer.prototype.addConnection = function(conn) {
 	conn.io.join(this._room);
 	this._sendAllStickiesAndStickers(conn);
 	conn.socket.on('create_sticky', function(data) {
-		self._handleStickyCreateRequest(conn, data.seqNum, data.sticky);
+		self._handleStickyCreateRequest(conn, clientId, data.seqNum, data.sticky);
 	});
 	conn.socket.on('create_sticker', function(data) {
-		self._handleStickerCreateRequest(conn, data.stickyId, data.type, data.x, data.y);
+		self._handleStickerCreateRequest(conn, clientId, data.stickyId, data.type, data.x, data.y);
 	});
 	conn.socket.on('move_sticky', function(data) {
-		self._handleStickyMoveRequest(conn, data.stickyId, data.x, data.y);
+		self._handleStickyMoveRequest(conn, clientId, data.stickyId, data.x, data.y);
 	});
 	conn.socket.on('disconnect', function() {
 		console.log("Client " + clientId + " disconnected!");
@@ -86,7 +86,29 @@ StickyServer.prototype._sendAllStickiesAndStickers = function(conn) {
 		}
 	});
 };
-StickyServer.prototype._handleStickyCreateRequest = function(conn, seqNum, sticky) {
+StickyServer.prototype._handleStickyCreateRequest = function(conn, clientId, seqNum, sticky) {
+	if(typeof sticky !== "object" ||
+		typeof sticky.text !== "string" ||
+		typeof sticky.x !== "number" ||
+		typeof sticky.y !== "number" ||
+		typeof sticky.textColor !== "string" ||
+		typeof sticky.paperColor !== "string" ||
+		typeof sticky.pinColor !== "string") {
+		return;
+	}
+	if(sticky.text.length > 140) {
+		return;
+	}
+	if(sticky.textColor !== "black" && sticky.textColor !== "red" && sticky.textColor !== "blue") {
+		return;
+	}
+	if(sticky.paperColor !== "yellow" && sticky.paperColor !== "pink" && sticky.paperColor !== "green" && sticky.paperColor !== "blue" && sticky.paperColor !== "orange") {
+		return;
+	}
+	if(sticky.pinColor !== "red" && sticky.pinColor !== "green" && sticky.pinColor !== "yellow" && sticky.pinColor !== "blue") {
+		return;
+	}
+
 	sticky = {
 		text: sticky.text,
 		x: sticky.x,
@@ -96,7 +118,7 @@ StickyServer.prototype._handleStickyCreateRequest = function(conn, seqNum, stick
 		pinColor: sticky.pinColor,
 		rotation: Math.round(30 * Math.random() - 15)
 	};
-	
+
 	//save the sticky to the db
 	var stickyRecord = new Sticky({
 		text: sticky.text,
@@ -105,7 +127,10 @@ StickyServer.prototype._handleStickyCreateRequest = function(conn, seqNum, stick
 		textColor: sticky.textColor,
 		paperColor: sticky.paperColor,
 		pinColor: sticky.pinColor,
-		rotation: sticky.rotation
+		rotation: sticky.rotation,
+		authorClientId: clientId,
+		authorSessionId: (conn ? conn.sessionId : ''),
+		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : '')
 	});
 	stickyRecord.save(function(err) {
 		if(err) {
@@ -121,7 +146,14 @@ StickyServer.prototype._handleStickyCreateRequest = function(conn, seqNum, stick
 	conn.io.emit('replace_sticky', { seqNum: seqNum, sticky: sticky });
 	conn.io.room(this._room).broadcast('draw_sticky', sticky);
 };
-StickyServer.prototype._handleStickerCreateRequest = function(conn, stickyId, type, x, y) {
+StickyServer.prototype._handleStickerCreateRequest = function(conn, clientId, stickyId, type, x, y) {
+	if(typeof stickyId !== "string" ||
+		typeof type !== "string" ||
+		typeof x !== "number" ||
+		typeof y !== "number") {
+		return;
+	}
+
 	var sticker = {
 		stickyId: stickyId,
 		type: type,
@@ -129,14 +161,17 @@ StickyServer.prototype._handleStickerCreateRequest = function(conn, stickyId, ty
 		y: y,
 		rotation: Math.round(30 * Math.random() - 15)
 	};
-	
+
 	//save the sticker to the db
 	var stickerRecord = new Sticker({
 		stickyId: sticker.stickyId,
 		type: sticker.type,
 		x: sticker.x,
 		y: sticker.y,
-		rotation: sticker.rotation
+		rotation: sticker.rotation,
+		authorClientId: clientId,
+		authorSessionId: (conn ? conn.sessionId : ''),
+		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : '')
 	});
 	stickerRecord.save(function(err) {
 		if(err) {
@@ -152,7 +187,13 @@ StickyServer.prototype._handleStickerCreateRequest = function(conn, stickyId, ty
 	conn.io.emit('draw_sticker', sticker );
 	conn.io.room(this._room).broadcast('draw_sticker', sticker);
 };
-StickyServer.prototype._handleStickyMoveRequest = function(conn, stickyId, x, y) {
+StickyServer.prototype._handleStickyMoveRequest = function(conn, clientId, stickyId, x, y) {
+	if(typeof stickyId !== "string" ||
+		typeof x !== "number" ||
+		typeof y !== "number") {
+		return;
+	}
+
 	var self = this;
 	Sticky.findOne({ _id: stickyId }, function(err, stickyRecord) {
 		if(err || !stickyRecord) {
