@@ -16,9 +16,30 @@ block content
       tbody
         for sticky in stickies
           tr
+            td= sticky.id
             td= sticky.text
             td
               a(href="##{sticky.id}") Delete
   else
     table.stickies
     p No stickies
+  h2 Stickers
+  if stickers
+    table.stickers
+      thead
+        tr
+          th ID
+          th Type
+          th Sticky ID
+          th
+      tbody
+        for sticker in stickers
+          tr
+            td= sticker.id
+            td= sticker.type
+            td= sticker.stickyId
+            td
+              a(href="##{sticker.id}") Delete
+  else
+    table.stickers
+    p No stickers

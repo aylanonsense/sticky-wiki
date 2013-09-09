@@ -6,7 +6,12 @@ function addRoutes(app) {
 	});
 	app.get('/admin', function(req, res) {
 		api.getAllStickies(function(stickies) {
-			res.render('admin.jade', { stickies: stickies });
+			api.getAllStickers(function(stickers) {
+				res.render('admin.jade', {
+					stickies: stickies,
+					stickers: stickers
+				});
+			});
 		});
 	});
 }

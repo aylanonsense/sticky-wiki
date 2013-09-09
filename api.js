@@ -1,5 +1,6 @@
 var models = require('./models');
 var Sticky = models.Sticky;
+var Sticker = models.Sticker;
 
 function addRoutes(app) {
 	app.get('/api/stickies', function(req, res) {
@@ -15,6 +16,11 @@ function addRoutes(app) {
 	app.delete('/api/sticky/:id', function(req, res) {
 		deleteSticky(req.params.id, function(sticky) {
 			res.send(sticky);
+		});
+	});
+	app.delete('/api/sticker/:id', function(req, res) {
+		deleteSticker(req.params.id, function(sticker) {
+			res.send(sticker);
 		});
 	});
 }
@@ -66,7 +72,7 @@ function getAllStickies(callback) {
 }
 function deleteSticky(id, callback) {
 	Sticky.find({ _id: id }, function(err, stickyRecord) {
-		if(err || !stickyRecord) {
+		if(err || !stickyRecord || stickyRecord.length === 0) {
 			callback(false);
 		}
 		else {
@@ -85,8 +91,53 @@ function deleteSticky(id, callback) {
 		}
 	});
 }
+function getAllStickers(callback) {
+	Sticker.find(function(err, stickerRecords) {
+		if(err) {
+			callback([]);
+		}
+		else {
+			var stickers = [];
+			stickerRecords.sort(function(a, b) { //TODO sort using mongoose instead
+				return a.lastModified.getTime() - b.lastModified.getTime();
+			});
+			stickerRecords.forEach(function(stickerRecord) {
+				stickers.push({
+					id: stickerRecord.id,
+					stickyId: stickerRecord.stickyId,
+					type: stickerRecord.type,
+					x: stickerRecord.x,
+					y: stickerRecord.y,
+					rotation: stickerRecord.rotation
+				});
+			});
+			callback(stickers);
+		}
+	});
+}
+function deleteSticker(id, callback) {
+	Sticker.find({ _id: id }, function(err, stickerRecord) {
+		if(err || !stickerRecord || stickerRecord.length === 0) {
+			callback(false);
+		}
+		else {
+			stickerRecord = stickerRecord[0];
+			stickerRecord.remove();
+			callback({
+				id: stickerRecord.id,
+				stickyId: stickerRecord.stickyId,
+				type: stickerRecord.type,
+				x: stickerRecord.x,
+				y: stickerRecord.y,
+				rotation: stickerRecord.rotation
+			});
+		}
+	});
+}
 
 exports.addRoutes = addRoutes;
 exports.getSticky = getSticky;
 exports.getAllStickies = getAllStickies;
 exports.deleteSticky = deleteSticky;
+exports.getAllStickers = getAllStickers;
+exports.deleteSticker = deleteSticker;

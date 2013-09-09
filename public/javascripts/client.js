@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	var isAddingStickers = false;
+
 	var canvas = $("#canvas");
 	var form = $("#menu form");
 	var textField = $("#sticky-message");
@@ -6,12 +8,17 @@ $(document).ready(function() {
 	var paperColorDropDown = $("#sticky-paper-color");
 	var pinColorDropDown = $("#sticky-pin-color");
 	var createStickyButton = $("#sticky-create");
+	var stickerTypeDropDown = $("#sticker-type");
+	var stickerToggleButton = $("#sticker-toggle");
 
 	var board = new StickyBoard(io.connect());
 	$(board.getRoot()).appendTo(canvas);
 
 	form.on('submit', function() {
 		createSticky();
+		setTimeout(function() {
+			textField.val("");
+		}, 0);
 		return false;
 	});
 	textField.on('keypress', function(evt) {
@@ -21,7 +28,20 @@ $(document).ready(function() {
 				textField.val("");
 			}, 0);
 		}
-	})
+	});
+	stickerToggleButton.on('click', function() {
+		isAddingStickers = !isAddingStickers;
+		if(isAddingStickers) {
+			board.startAddingStickers(stickerTypeDropDown.val());
+			stickerToggleButton.val("Stop Adding");
+			stickerTypeDropDown.prop('disabled', true);
+		}
+		else {
+			board.stopAddingStickers();
+			stickerToggleButton.val("Start Adding");
+			stickerTypeDropDown.prop('disabled', false);
+		}
+	});
 
 	function createSticky() {
 		if(textField.val().trim() !== "") {
@@ -33,7 +53,6 @@ $(document).ready(function() {
 				pinColor: pinColorDropDown.val(),
 				paperColor: paperColorDropDown.val()
 			});
-			textField.val("");
 		}
 	}
 });

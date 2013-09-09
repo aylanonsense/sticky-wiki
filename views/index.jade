@@ -6,9 +6,9 @@ block scripts
 
 block content
   #menu
+    h2 Sticky Wiki
+    h3 "What fun things could the UI team do together?"
     form
-      h2 Sticky Wiki
-      h3 "What fun things could the UI team do together?"
       label(for="sticky-message") Your idea:
         textarea#sticky-message(rows="4",cols="23")
       br
@@ -34,4 +34,12 @@ block content
         option(value="blue") Blue
       br
       input#sticky-create(type="submit", value="Create Sticky")
+    br
+    form
+      p Add stickers!
+      label(for="sticker-type") Sticker:
+      select#sticker-type
+        option(value="heart") Heart
+        option(value="dog") Dog
+      input#sticker-toggle(type="button", value="Start Adding")
   #canvas

@@ -3,7 +3,8 @@ body{padding:0;margin:0;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}
 #menu h3{font-size:10pt;font-weight:bold;text-align:center;padding:5px 0 15px 0;margin:0 0 10px 0;border-bottom:1px solid #e4e4e4}
 #menu label{width:75px;display:inline-block}
 #menu select{width:110px}
-#menu input[type=submit]{padding:300px;display:block;font-size:120%;margin:3px auto 0 auto;width:100px;display:block}
+#menu input[type=submit],#menu input[type=button]{padding:300px;display:block;font-size:120%;margin:3px auto 0 auto;width:100px;display:block}
+#menu p{margin:0;font-style:italic;color:#aaa}
 #canvas{margin-left:200px;width:1000px;height:600px;border-right:2px solid #ddd}
 h1{color:orange}
 a{color:#00B7FF}

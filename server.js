@@ -1,5 +1,6 @@
 var models = require('./models');
 var Sticky = models.Sticky;
+var Sticker = models.Sticker;
 
 function StickyServer() {
 	this._room = 'sticky_board_' + (this.NEXT_ROOM_ID++);
@@ -10,9 +11,12 @@ StickyServer.prototype.addConnection = function(conn) {
 	var self = this;
 	var clientId = this._nextClientId++;
 	conn.io.join(this._room);
-	this._sendAllStickies(conn);
+	this._sendAllStickiesAndStickers(conn);
 	conn.socket.on('create_sticky', function(data) {
 		self._handleStickyCreateRequest(conn, data.seqNum, data.sticky);
+	});
+	conn.socket.on('create_sticker', function(data) {
+		self._handleStickerCreateRequest(conn, data.stickyId, data.type, data.x, data.y);
 	});
 	conn.socket.on('move_sticky', function(data) {
 		self._handleStickyMoveRequest(conn, data.stickyId, data.x, data.y);
@@ -22,13 +26,15 @@ StickyServer.prototype.addConnection = function(conn) {
 	});
 	console.log("Client " + clientId + " connected!");
 };
-StickyServer.prototype._sendAllStickies = function(conn) {
+StickyServer.prototype._sendAllStickiesAndStickers = function(conn) {
+	var stickies = null;
+	var stickers = null;
 	Sticky.find(function(err, stickyRecords) {
 		if(err) {
 			console.log("Error retrieving all stickies:", err);
 		}
 		else {
-			var stickies = [];
+			stickies = [];
 			stickyRecords.sort(function(a, b) { //TODO sort using mongoose instead
 				return a.lastModified.getTime() - b.lastModified.getTime();
 			});
@@ -44,7 +50,39 @@ StickyServer.prototype._sendAllStickies = function(conn) {
 					rotation: stickyRecord.rotation
 				});
 			});
-			conn.io.emit('draw_stickies', stickies);
+			if(stickers !== null) {
+				conn.io.emit('draw_all', {
+					stickies: stickies,
+					stickers: stickers
+				});
+			}
+		}
+	});
+	Sticker.find(function(err, stickerRecords) {
+		if(err) {
+			console.log("Error retrieving all stickers:", err);
+		}
+		else {
+			stickers = [];
+			stickerRecords.sort(function(a, b) { //TODO sort using mongoose instead
+				return a.lastModified.getTime() - b.lastModified.getTime();
+			});
+			stickerRecords.forEach(function(stickerRecord) {
+				stickers.push({
+					id: stickerRecord.id,
+					stickyId: stickerRecord.stickyId,
+					type: stickerRecord.type,
+					x: stickerRecord.x,
+					y: stickerRecord.y,
+					rotation: stickerRecord.rotation
+				});
+			});
+			if(stickies !== null) {
+				conn.io.emit('draw_all', {
+					stickies: stickies,
+					stickers: stickers
+				});
+			}
 		}
 	});
 };
@@ -82,6 +120,37 @@ StickyServer.prototype._handleStickyCreateRequest = function(conn, seqNum, stick
 	//send sticky to all clients
 	conn.io.emit('replace_sticky', { seqNum: seqNum, sticky: sticky });
 	conn.io.room(this._room).broadcast('draw_sticky', sticky);
+};
+StickyServer.prototype._handleStickerCreateRequest = function(conn, stickyId, type, x, y) {
+	var sticker = {
+		stickyId: stickyId,
+		type: type,
+		x: x,
+		y: y,
+		rotation: Math.round(30 * Math.random() - 15)
+	};
+	
+	//save the sticker to the db
+	var stickerRecord = new Sticker({
+		stickyId: sticker.stickyId,
+		type: sticker.type,
+		x: sticker.x,
+		y: sticker.y,
+		rotation: sticker.rotation
+	});
+	stickerRecord.save(function(err) {
+		if(err) {
+			console.log('Sticker "' + sticker.type + '" could NOT be saved!');
+		}
+		else {
+			console.log('Sticker "' + sticker.type + '" saved!');
+		}
+	});
+	sticker.id = stickerRecord.id;
+
+	//send sticker to all clients
+	conn.io.emit('draw_sticker', sticker );
+	conn.io.room(this._room).broadcast('draw_sticker', sticker);
 };
 StickyServer.prototype._handleStickyMoveRequest = function(conn, stickyId, x, y) {
 	var self = this;
