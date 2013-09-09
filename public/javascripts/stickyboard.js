@@ -238,126 +238,35 @@ var StickyBoard = (function() {
 	Sticker.prototype._refreshSVG = function() {
 		this._root.setAttribute('transform', 'translate(' + this._x + ', ' + this._y + ')');
 		if(this._type === 'heart') {
-			var square = createSVG('rect', {
-				x: -10,
-				y: -10,
-				width: 20,
-				height: 20,
-				fill: '#f00',
-				stroke: '#000',
-				strokeWidth: 1,
+			var heart = createSVG('path', {
+				d: 'M 0 8 ' +
+					'Q -7 4 -8 0 ' +
+					'Q -8 -4 -5 -5 ' +
+					'Q -1 -5 0 -2 ' +
+					'Q 1 -5 5 -5' +
+					'Q 8 -4 8 0' +
+					'Q 7 4 0 8',
+				fill: '#e56',
+				stroke: '#623',
+				strokeWidth: 1.5,
 				transform: 'rotate(' + this._rotation + ' 0,0)'
 			});
-			this._root.appendChild(square);
+			this._root.appendChild(heart);
 		}
 		else {
-			var square = createSVG('rect', {
-				x: -10,
-				y: -10,
-				width: 20,
-				height: 20,
-				fill: '#00f',
-				stroke: '#000',
+			var teardrop = createSVG('path', {
+				d: 'M 0 -10 ' +
+					'Q 5 -4 5.5 0 ' +
+					'Q 5 6 0 6 ' +
+					'Q -5 6 -5.5 0 ' +
+					'Q -5 -4 0 -10',
+				fill: '#49d',
+				stroke: '#235',
 				strokeWidth: 1,
 				transform: 'rotate(' + this._rotation + ' 0,0)'
 			});
-			this._root.appendChild(square);
+			this._root.appendChild(teardrop);
 		}
-		/*var paperColor;
-		switch(this._paperColor) {
-			case 'pink': paperColor = '#f5d4f5'; break;
-			case 'green': paperColor = '#ddf8e2'; break;
-			case 'blue': paperColor = '#d4edf5'; break;
-			case 'orange': paperColor = '#f8e3cc'; break;
-			default: paperColor = '#fdfbd5'; break;
-		}
-		var inkColor;
-		switch(this._textColor) {
-			case 'red': inkColor = '#c71227'; break;
-			case 'blue': inkColor = '#1925ac'; break;
-			default: inkColor = '#222222'; break;
-		}
-		var pinColor;
-		switch(this._pinColor) {
-			case 'green': pinColor = "#1bc530"; break;
-			case 'yellow': pinColor = "#e0d228"; break;
-			case 'blue': pinColor = "#4f6eec"; break;
-			default: pinColor = "#f0593d"; break;
-		}
-		this._root.setAttribute('transform', 'translate(' + this._x + ', ' + this._y + ')');
-		var paper = createSVG('rect', {
-			x: -50,
-			y: -2,
-			width: 100,
-			height: 100,
-			fill: paperColor,
-			stroke: 'black',
-			strokeWidth: 1,
-			transform: 'rotate(' + this._rotation + ' 0,0)'
-		});
-		this._root.appendChild(paper);
-		var g = createSVG('g', {
-			transform: 'rotate(' + this._rotation + ' 0,0),translate(-45,15)'
-		});
-		this._root.appendChild(g);
-		var txt = createSVG('text', {
-			y: 5,
-			fill: inkColor,
-			fontSize: '12pt'
-		}, this._text);
-		g.appendChild(txt);
-		fitTextToBox(txt, 90, 90, [ '10pt', '8pt', '6pt', '4pt' ], 'center', 'center');
-		var pin = createSVG('circle', {
-			cx: 0,
-			cy: 0,
-			r: 5,
-			fill: pinColor,
-			stroke: 'black',
-			strokeWidth: 1
-		});
-		this._root.appendChild(pin);
-		var dragArea = createSVG('rect', {
-			x: -50,
-			y: -2,
-			width: 100,
-			height: 100,
-			fill: '#ff00ff',
-			'fill-opacity': 0.0000001, //some browsers don't register clicks if this is 0
-			stroke: 'none',
-			transform: 'rotate(' + this._rotation + ' 0,0)'
-		});
-		var self = this;
-		$(dragArea).on('mousedown', function(evt) {
-			self._root.parentNode.appendChild(self._root);
-			var stickyStartingPos = { x: self._x, y: self._y };
-			var start = { x: evt.pageX, y: evt.pageY };
-			function moveSticky(evt) {
-				var end = { x: evt.pageX, y: evt.pageY };
-				self._x = stickyStartingPos.x + end.x - start.x;
-				self._y = stickyStartingPos.y + end.y - start.y;
-				self._root.setAttribute('transform', 'translate(' + self._x + ', ' + self._y + ')');
-			}
-			function stopMovingSticky(evt) {
-				var end = { x: evt.pageX, y: evt.pageY };
-				self._x = stickyStartingPos.x + end.x - start.x;
-				self._y = stickyStartingPos.y + end.y - start.y;
-				self._root.setAttribute('transform', 'translate(' + self._x + ', ' + self._y + ')');
-				this.setAttributeNS(null, 'x', -50);
-				this.setAttributeNS(null, 'y', -2);
-				this.setAttributeNS(null, 'width', 100);
-				this.setAttributeNS(null, 'height', 100);
-				$(this).off('mousemove', moveSticky);
-				$(this).off('mouseup', stopMovingSticky);
-				self._board._sendMoveSticky(self); //cheating! cheating!
-			}
-			this.setAttributeNS(null, 'x', -1000);
-			this.setAttributeNS(null, 'y', -952);
-			this.setAttributeNS(null, 'width', 2000);
-			this.setAttributeNS(null, 'height', 2000);
-			$(this).on('mousemove', moveSticky);
-			$(this).on('mouseup', stopMovingSticky);
-		});
-		this._root.appendChild(dragArea);*/
 	};
 	Sticker.prototype.getRoot = function() {
 		return this._root;
