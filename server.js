@@ -12,13 +12,20 @@ StickyServer.prototype.NEXT_ROOM_ID = 1;
 StickyServer.prototype.addConnection = function(conn) {
 	var self = this;
 	var clientId = this._nextClientId++;
+	var canPlaceSticker = false;
+	var timer = setInterval(function() {
+		canPlaceSticker = true;
+	}, 10000);
 	conn.io.join(this._room);
 	this._sendAllStickiesAndStickers(conn);
 	conn.socket.on('create_sticky', function(data) {
 		self._handleStickyCreateRequest(conn, clientId, data.seqNum, data.sticky);
 	});
 	conn.socket.on('create_sticker', function(data) {
-		self._handleStickerCreateRequest(conn, clientId, data.stickyId, data.type, data.x, data.y);
+		if(canPlaceSticker) {
+			self._handleStickerCreateRequest(conn, clientId, data.stickyId, data.type, data.x, data.y);
+			canPlaceSticker = false;
+		}
 	});
 	conn.socket.on('move_sticky', function(data) {
 		self._handleStickyMoveRequest(conn, clientId, data.stickyId, data.x, data.y);
