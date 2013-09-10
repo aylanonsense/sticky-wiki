@@ -6,6 +6,7 @@ var StickyMove = models.StickyMove;
 function StickyServer() {
 	this._room = 'sticky_board_' + (this.NEXT_ROOM_ID++);
 	this._nextClientId = 1;
+	this._serverSession = '' + Math.floor(10000000 * Math.random());
 }
 StickyServer.prototype.NEXT_ROOM_ID = 1;
 StickyServer.prototype.addConnection = function(conn) {
@@ -131,7 +132,8 @@ StickyServer.prototype._handleStickyCreateRequest = function(conn, clientId, seq
 		rotation: sticky.rotation,
 		authorClientId: clientId,
 		authorSessionId: (conn ? conn.sessionId : ''),
-		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : '')
+		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : ''),
+		serverSession: this._serverSession
 	});
 	stickyRecord.save(function(err) {
 		if(err) {
@@ -172,7 +174,8 @@ StickyServer.prototype._handleStickerCreateRequest = function(conn, clientId, st
 		rotation: sticker.rotation,
 		authorClientId: clientId,
 		authorSessionId: (conn ? conn.sessionId : ''),
-		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : '')
+		authorAddress: (conn && conn.handshake && conn.handshake.address && conn.handshake.address.address ? conn.handshake.address.address : ''),
+		serverSession: this._serverSession
 	});
 	stickerRecord.save(function(err) {
 		if(err) {

@@ -12,7 +12,8 @@ var stickySchema = new mongoose.Schema({
 	dateCreated: { type: Date, default: Date.now },
 	authorClientId: { type: Number },
 	authorSessionId: { type: String },
-	authorAddress: { type: String }
+	authorAddress: { type: String },
+	serverSession: { type: String }
 });
 stickySchema.virtual('id').get(function() {
 	return this._id;
@@ -29,7 +30,8 @@ var stickerSchema = new mongoose.Schema({
 	dateCreated: { type: Date, default: Date.now },
 	authorClientId: { type: Number },
 	authorSessionId: { type: String },
-	authorAddress: { type: String }
+	authorAddress: { type: String },
+	serverSession: { type: String }
 });
 stickerSchema.virtual('id').get(function() {
 	return this._id;
